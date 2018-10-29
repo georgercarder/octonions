@@ -47,4 +47,6 @@ class Dickson {
 
       return res;
     };
+
+    // need to overload +, -
 };
