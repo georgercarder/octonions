@@ -53,10 +53,19 @@ int main() {
   cout << com3r << "\t" << com3i << endl;
   // up to this point.. complex multiplication appears to work.
 
+  Complex csum = com + com2;
+  int csumr = *csum.getRe();
+  int csumi = *csum.getIm();
+
+  cout << csumr << "\t" << csumi << endl;
   //
+  Complex csub = com - com2;
+  int csubr = *csub.getRe();
+  int csubi = *csub.getIm();
 
+  cout << csubr << "\t" << csubi << endl;
+  // up to this point.. complex subtraction appears to work.
 
-  
   /*
   Octonion oct(quat1, quat2);
 */

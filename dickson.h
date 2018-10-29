@@ -51,27 +51,27 @@ class Dickson {
       return res;
     };
 
-   /* Dickson operator+(Dickson &_B){
-      T c = _B.getRe();
-      T d = _B.getIm();
+    Dickson operator+(Dickson &_B){
+      T *c = _B.getRe();
+      T *d = _B.getIm();
 
-      T A = this->Re + c;
-      T B = this->Im + d;
+      T A = *(this->Re) + *c;
+      T B = *(this->Im) + *d;
 
-      Dickson res(A, B);
-
-      return res;
-    };*/
-
-   /* Dickson operator-(Dickson &_B){
-      T c = _B.getRe();
-      T d = _B.getIm();
-
-      T A = this->Re - c;
-      T B = this->Im - d;
-
-      Dickson res(A, B);
+      Dickson res(&A, &B);
 
       return res;
-    };*/
+    };
+
+    Dickson operator-(Dickson &_B){
+      T *c = _B.getRe();
+      T *d = _B.getIm();
+
+      T A = *(this->Re) - *c;
+      T B = *(this->Im) - *d;
+
+      Dickson res(&A, &B);
+
+      return res;
+    };
 };
