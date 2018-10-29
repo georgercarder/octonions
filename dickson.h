@@ -40,9 +40,6 @@ class Dickson {
       T c = _B.getRe();
       T d = _B.getIm();
 
-      cout << c << endl
-          << d << endl;
-
       T A = this->Re * c - this->Im * d;
       T B = this->Re * d + this->Im * c;
 
