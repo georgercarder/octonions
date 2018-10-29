@@ -72,7 +72,11 @@ int main() {
 
   Quaternion quaa = qua + qua2;
   Quaternion quas = qua - qua2;
+  /// works up to this point
+  
   Quaternion quam = qua * qua2;
+
+  // quaternion mult having problems
 
   /*
   Octonion oct(quat1, quat2);
