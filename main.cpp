@@ -44,7 +44,15 @@ int main() {
     << *a2r << "\t" << *a2i << endl;
   
   // up to this point.. built and dissassembled quaternion.
-  
+  // now test complex mult
+
+  Complex com3 = com * com2;
+  int com3r = *com3.getRe();
+  int com3i = *com3.getIm();
+
+  cout << com3r << "\t" << com3i << endl;
+  // up to this point.. complex multiplication appears to work.
+
   //
 
 

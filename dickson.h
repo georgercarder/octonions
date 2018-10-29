@@ -14,7 +14,6 @@ class Dickson {
     Dickson(T *a, T *b){
       this->Re = a;
       this->Im = b;
-
       cout << "new dickson" << endl;
     };
   
@@ -39,18 +38,20 @@ class Dickson {
     };
 
     Dickson operator*(Dickson &_B){
-      T c = _B.getRe();
-      T d = _B.getIm();
+      T *c = _B.getRe();
+      T *d = _B.getIm();
+      
+      T A = *(this->Re) * *c - *(this->Im) * *d;
+      T B = *(this->Re) * *d + *(this->Im) * *c;
 
-      T A = this->Re * c - this->Im * d;
-      T B = this->Re * d + this->Im * c;
+      cout << A << "\t" << B << endl;
 
-      Dickson res(A, B);
+      Dickson res(&A, &B);
 
       return res;
     };
 
-    Dickson operator+(Dickson &_B){
+   /* Dickson operator+(Dickson &_B){
       T c = _B.getRe();
       T d = _B.getIm();
 
@@ -60,9 +61,9 @@ class Dickson {
       Dickson res(A, B);
 
       return res;
-    };
+    };*/
 
-    Dickson operator-(Dickson &_B){
+   /* Dickson operator-(Dickson &_B){
       T c = _B.getRe();
       T d = _B.getIm();
 
@@ -72,5 +73,5 @@ class Dickson {
       Dickson res(A, B);
 
       return res;
-    };
+    };*/
 };
