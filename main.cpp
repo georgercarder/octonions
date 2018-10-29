@@ -11,7 +11,8 @@ int main() {
 
   int ent[8] = {3,4,5,2,6,7,8,9};
 
-  Complex com(&ent[0], &ent[1]), com2(&ent[2], &ent[3]);
+  Complex com(&ent[0], &ent[1]), com2(&ent[2], &ent[3]),
+          com3(&ent[4], &ent[5]), com4(&ent[6], &ent[7]);
 
   int* comr = com.getRe();
   int* comi = com.getIm();
@@ -23,7 +24,8 @@ int main() {
 
   ////
   
-  Quaternion qua(&com, &com2);
+  Quaternion qua(&com, &com2),
+             qua2(&com3, &com4);
 
   Complex *c1, *c2;
   c1 = qua.getRe();
@@ -46,11 +48,11 @@ int main() {
   // up to this point.. built and dissassembled quaternion.
   // now test complex mult
 
-  Complex com3 = com * com2;
-  int com3r = *com3.getRe();
-  int com3i = *com3.getIm();
+  Complex comm = com * com2;
+  int commr = *comm.getRe();
+  int commi = *comm.getIm();
 
-  cout << com3r << "\t" << com3i << endl;
+  cout << commr << "\t" << commi << endl;
   // up to this point.. complex multiplication appears to work.
 
   Complex csum = com + com2;
@@ -65,6 +67,12 @@ int main() {
 
   cout << csubr << "\t" << csubi << endl;
   // up to this point.. complex subtraction appears to work.
+
+  // now need to test Quaternion +, -, and *
+
+  Quaternion quaa = qua + qua2;
+  Quaternion quas = qua - qua2;
+  Quaternion quam = qua * qua2;
 
   /*
   Octonion oct(quat1, quat2);

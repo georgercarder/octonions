@@ -44,7 +44,7 @@ class Dickson {
       T A = *(this->Re) * *c - *(this->Im) * *d;
       T B = *(this->Re) * *d + *(this->Im) * *c;
 
-      cout << A << "\t" << B << endl;
+    //  cout << A << "\t" << B << endl;
 
       Dickson res(&A, &B);
 
