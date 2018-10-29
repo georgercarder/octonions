@@ -7,23 +7,16 @@ class Dickson {
     T Im;
 
   public:
-    Dickson(){
-      cout << "new dickson" << endl;  
-    };
+    Dickson();
 
     Dickson(T a, T b){
-      cout << "new dickson number" << endl;
       this->Re = a;
       this->Im = b;
     };
   
-    Dickson(const Dickson &obj) {
-      cout << "copy dickson" << endl;
-    };
+    Dickson(const Dickson &obj);
 
-    ~Dickson(){
-      cout << "dickson killed" << endl;
-    };
+    ~Dickson();
 
     void setRe(T a){
       this->Re = a;
