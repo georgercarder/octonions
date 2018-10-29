@@ -7,16 +7,16 @@ class Dickson {
     T Im;
 
   public:
-    Dickson();
+    Dickson(){};
 
     Dickson(T a, T b){
       this->Re = a;
       this->Im = b;
     };
   
-    Dickson(const Dickson &obj);
+    Dickson(const Dickson &obj){};
 
-    ~Dickson();
+    ~Dickson(){};
 
     void setRe(T a){
       this->Re = a;

@@ -24,7 +24,8 @@ int main() {
   };
 
   Octonion oct(quat[0], quat[1]);
-  
+ 
+
   return 0;
 }
 
