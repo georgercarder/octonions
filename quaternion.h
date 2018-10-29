@@ -1,0 +1,2 @@
+
+typedef Dickson<Complex> Quaternion;

@@ -1,0 +1,2 @@
+
+typedef Dickson<int> Complex;
