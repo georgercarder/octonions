@@ -76,7 +76,7 @@ int main() {
   
   Quaternion quam = qua * qua2;
 
-  // quaternion mult having problems
+  // quaternion mult compiles.. but now need to look at entries to see if correct 
 
   /*
   Octonion oct(quat1, quat2);

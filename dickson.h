@@ -40,10 +40,19 @@ class Dickson {
     Dickson operator*(Dickson &_B){
       T *c = _B.getRe();
       T *d = _B.getIm();
-      
+     /* 
       T A = *(this->Re) * *c - *(this->Im) * *d;
       T B = *(this->Re) * *d + *(this->Im) * *c;
+      */
 
+      T A1 = *(this->Re) * *c;// - *(this->Im) * *d;
+      T B1 = *(this->Re) * *d;// + *(this->Im) * *c;
+
+      T A2 = *(this->Im) * *d;
+      T B2 = *(this->Im) * *c;
+
+      T A = A1 - A2;
+      T B = B1 + B2;
     //  cout << A << "\t" << B << endl;
 
       Dickson res(&A, &B);
