@@ -18,13 +18,6 @@ int main() {
         << "Complex " << com2 << endl;  
 
   ////
-  
-  Quaternion qua(com, com2),
-             qua2(com3, com4);
-
-  cout << "Quaternion " << qua << endl;
-  
-  // up to this point.. built and dissassembled quaternion.
   // now test complex mult
 
   Complex comm = com * com2;
@@ -34,40 +27,39 @@ int main() {
 
   Complex csum = com + com2;
   
-  cout << csum << endl;
+  cout << "com1 + com2 " << csum << endl;
   //
   Complex csub = com - com2;
-  cout << csub << endl;
+  cout << "com1 - com2 " << csub << endl;
   // up to this point.. complex subtraction appears to work.
 
   // now need to test Quaternion +, -, and *
-/*
+
+  
+  Quaternion qua(com, com2),
+             qua2(com3, com4);
+
+  cout << "Quaternion1 " << qua << endl
+    << "Quaternion2 " << qua2 << endl;
+  
+  // up to this point.. built and dissassembled quaternion.
   Quaternion quaa = qua + qua2;
   Quaternion quas = qua - qua2;
- */ /// works up to this point
-  /*
+  
+  cout << "Qua1 + Qua2 " << quaa << endl
+    << "Qua1 - Qua2 " << quas << endl;
+
+  /// works up to this point
+  
   Quaternion quam = qua * qua2;
 
-  Complex *cm1, *cm2;
-  cm1 = quam.getRe();
-  cm2 = quam.getIm();
+  cout << "Qua1 * Qua2 " << quam << endl;
+  // quaternion mult compiles.. but now need to look at entries to see if correct 
 
-  Complex am1, am2;
-  am1 = *cm1;
-  am2 = *cm2;
+  Octonion oct(qua, qua2);
+  
+  cout << "Octonion " << oct << endl;
 
-  int *am1r, *am1i, *am2r, *am2i;
-  am1r = am1.getRe();
-  am1i = am1.getIm();
-  am2r = am2.getRe();
-  am2i = am2.getIm();
- */ // quaternion mult compiles.. but now need to look at entries to see if correct 
-
- /* cout << *am1r << "\t" << *am1i << endl
-    << *am2r << "\t" << *am2i << endl;
- */ /*
-  Octonion oct(quat1, quat2);
-*/
   return 0;
 }
 
