@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
 
-  int ent[8] = {3,4,5,2,6,7,8,9};
+  int ent[8] = {3,1,5,2,1,4,3,2};
 
   Complex com(&ent[0], &ent[1]), com2(&ent[2], &ent[3]),
           com3(&ent[4], &ent[5]), com4(&ent[6], &ent[7]);
@@ -41,7 +41,7 @@ int main() {
   a2r = a2.getRe();
   a2i = a2.getIm();
   
-
+  cout << "quat.. entries" << endl;
   cout << *a1r << "\t" << *a1i << endl
     << *a2r << "\t" << *a2i << endl;
   
@@ -76,8 +76,23 @@ int main() {
   
   Quaternion quam = qua * qua2;
 
+  Complex *cm1, *cm2;
+  cm1 = quam.getRe();
+  cm2 = quam.getIm();
+
+  Complex am1, am2;
+  am1 = *cm1;
+  am2 = *cm2;
+
+  int *am1r, *am1i, *am2r, *am2i;
+  am1r = am1.getRe();
+  am1i = am1.getIm();
+  am2r = am2.getRe();
+  am2i = am2.getIm();
   // quaternion mult compiles.. but now need to look at entries to see if correct 
 
+  cout << *am1r << "\t" << *am1i << endl
+    << *am2r << "\t" << *am2i << endl;
   /*
   Octonion oct(quat1, quat2);
 */

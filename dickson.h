@@ -40,10 +40,8 @@ class Dickson {
     Dickson operator*(Dickson &_B){
       T *c = _B.getRe();
       T *d = _B.getIm();
-     /* 
-      T A = *(this->Re) * *c - *(this->Im) * *d;
-      T B = *(this->Re) * *d + *(this->Im) * *c;
-      */
+
+      // need to be sure conjugate is being accounted for
 
       T A1 = *(this->Re) * *c;// - *(this->Im) * *d;
       T B1 = *(this->Re) * *d;// + *(this->Im) * *c;
