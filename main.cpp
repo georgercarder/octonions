@@ -101,6 +101,8 @@ int main() {
   
   Octonion octm = oct * _oct;
 
+  // octonion product not yet validated .. need to find good
+  // validating resource.. wolfram alpha was of no help
   cout << "Octonion product oct * _oct " << octm << endl;
 
   return 0;
