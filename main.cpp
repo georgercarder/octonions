@@ -75,8 +75,8 @@ int main() {
   Quaternion quam = qua * qua2;
 
   cout << "Qua1 * Qua2 " << quam << endl;
-  // quaternion mult compiles.. but now need to look at entries to see if correct 
-
+  // quaternion mult is validated
+  
   Octonion oct(qua, qua2);
   Octonion octconj = ~oct;
   
