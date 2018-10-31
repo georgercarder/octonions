@@ -41,12 +41,11 @@ class Dickson {
 
       
 
-      T A2 = this->Im * d;//conjugate(d); // d conjugate
-      T B2 = this->Im * c;//conjugate(c); // c conjugate
+      T A2 = this->Im * d;
+      T B2 = this->Im * c;
 
       T A = A1 - A2;
       T B = B1 + B2;
-    //  cout << A << "\t" << B << endl;
 
       Dickson res(A, B);
 
