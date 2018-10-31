@@ -35,6 +35,11 @@ int main() {
   Complex comm = com * com2;
   
   cout << "Complex mult " << comm << endl;
+  
+  Complex ab = com * conj;
+
+  cout << "Complex mult com * ~com " << ab << endl; 
+  
   // up to this point.. complex multiplication appears to work.
 
   Complex csum = com + com2;
@@ -75,9 +80,28 @@ int main() {
   Octonion oct(qua, qua2);
   Octonion octconj = ~oct;
   
-  cout << "Octonion " << oct << endl;
-  cout << "Octonion conjugate " << octconj << endl;
+  cout << "Octonion oct " << oct << endl;
+  cout << "Octonion conjugate ~oct " << octconj << endl;
 
+  // define second octonion to check mult
+  int _ent[8] = {2,3,7,3,9,4,5,7};
+  
+  Baseint _ba(_ent[0]), _ba2(_ent[1]), _ba3(_ent[2]), _ba4(_ent[3]),
+          _ba5(_ent[4]), _ba6(_ent[5]), _ba7(_ent[6]), _ba8(_ent[7]);
+
+  Complex _com(_ba.Re, _ba2.Re), _com2(_ba3.Re, _ba4.Re),
+          _com3(_ba5.Re, _ba6.Re), _com4(_ba7.Re, _ba8.Re);
+
+  Quaternion _qua(_com, _com2),
+             _qua2(_com3, _com4);
+
+  Octonion _oct(_qua, _qua2);
+
+  cout << "Octonion _oct " << _oct << endl;
+  
+  Octonion octm = oct * _oct;
+
+  cout << "Octonion product oct * _oct " << octm << endl;
 
   return 0;
 }
