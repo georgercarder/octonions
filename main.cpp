@@ -3,8 +3,8 @@
 
 using namespace std;
 
-#include "baseint.h"
 #include "dickson.h"
+#include "baseint.h"
 #include "complex.h"
 #include "quaternion.h"
 #include "octonion.h"
