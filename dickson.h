@@ -82,7 +82,7 @@ class Dickson {
       return res; 
     }
 
-    Dickson operator~(){
+    Dickson operator~(){ // this is conjugate operator
 
       T A = ~this->Re;
       T B = -this->Im;

@@ -40,7 +40,8 @@ class Baseint {
       return re;
     }
 
-    int operator~(){
+    int operator~(){ // this is conjugate operator.. which is terminal here
+
       int re = this->Re;
 
       return re;
