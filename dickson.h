@@ -14,8 +14,10 @@ class Dickson {
     };
 
     Dickson(T a, T b){
+
       this->Re = a;
       this->Im = b;
+
       //cout << "new dickson" << endl;
     };
 
@@ -33,7 +35,7 @@ class Dickson {
     void setIm(T b){
       this->Im = b;
     };*/
-
+    /*
     T getRe(){
       T re = this->Re;
       return re;
@@ -42,22 +44,32 @@ class Dickson {
     T getIm(){
       T im = this->Im;
       return im;
-    };
+    };*/
+  /*  T conjugate(T e){
+      
+      if ( typeid(T) == typeid(int) ) {
+        throw "int doesn't like conjugate";
+        return e;
+      } else {
+          T res(e.Re, -e.Im);  
+          return res;
+      };
+    };*/
 
     Dickson operator*(Dickson &_B){
-     /* T *c = _B.getRe();
-      T *d = _B.getIm();
-*/
+
       T c = _B.Re;
       T d = _B.Im;
 
       // need to be sure conjugate is being accounted for
 
-      T A1 = this->Re * c;// - *(this->Im) * *d;
-      T B1 = this->Re * d;// + *(this->Im) * *c;
+      T A1 = this->Re * c;
+      T B1 = this->Re * d;
 
-      T A2 = this->Im * d;
-      T B2 = this->Im * c;
+      
+
+      T A2 = this->Im * d;//conjugate(d); // d conjugate
+      T B2 = this->Im * c;//conjugate(c); // c conjugate
 
       T A = A1 - A2;
       T B = B1 + B2;

@@ -1,2 +1,2 @@
 
-typedef Dickson<int> Complex;
+typedef Dickson<Baseint> Complex;

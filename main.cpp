@@ -1,7 +1,9 @@
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 
+#include "baseint.h"
 #include "dickson.h"
 #include "complex.h"
 #include "quaternion.h"
@@ -11,18 +13,25 @@ int main() {
 
   int ent[8] = {3,1,5,2,1,4,3,2};
 
-  Complex com(ent[0], ent[1]), com2(ent[2], ent[3]),
-          com3(ent[4], ent[5]), com4(ent[6], ent[7]);
+  // had to define baseint to generically define conjugate
+  // so that generalized multiplication would work.
+
+  Baseint ba(ent[0]), ba2(ent[1]), ba3(ent[2]), ba4(ent[3]),
+          ba5(ent[4]), ba6(ent[5]), ba7(ent[6]), ba8(ent[7]);
+
+  Complex com(ba.Re, ba2.Re), com2(ba3.Re, ba4.Re),
+          com3(ba5.Re, ba6.Re), com4(ba7.Re, ba8.Re);
 
   cout << "Complex " << com << endl
         << "Complex " << com2 << endl;  
+
 
   ////
   // now test complex mult
 
   Complex comm = com * com2;
   
-  cout << comm << endl;
+  cout << "Complex mult" << comm << endl;
   // up to this point.. complex multiplication appears to work.
 
   Complex csum = com + com2;
@@ -30,7 +39,7 @@ int main() {
   cout << "com1 + com2 " << csum << endl;
   //
   Complex csub = com - com2;
-  cout << "com1 - com2 " << csub << endl;
+  //cout << "com1 - com2 " << csub << endl;
   // up to this point.. complex subtraction appears to work.
 
   // now need to test Quaternion +, -, and *
@@ -58,7 +67,8 @@ int main() {
 
   Octonion oct(qua, qua2);
   
-  cout << "Octonion " << oct << endl;
+  //cout << "Octonion " << oct << endl;
+
 
   return 0;
 }
