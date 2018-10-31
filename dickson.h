@@ -39,10 +39,11 @@ class Dickson {
       T A1 = this->Re * c;
       T B1 = this->Re * d;
 
-      
+      T cconj = ~c;
+      T dconj = ~d; 
 
-      T A2 = this->Im * d;
-      T B2 = this->Im * c;
+      T A2 = this->Im * dconj;
+      T B2 = this->Im * cconj;
 
       T A = A1 - A2;
       T B = B1 + B2;
