@@ -26,12 +26,15 @@ int main() {
         << "Complex " << com2 << endl;  
 
 
+  Complex conj = ~com;
+
+  cout << "complex conjugate " << conj << endl;
   ////
   // now test complex mult
 
   Complex comm = com * com2;
   
-  cout << "Complex mult" << comm << endl;
+  cout << "Complex mult " << comm << endl;
   // up to this point.. complex multiplication appears to work.
 
   Complex csum = com + com2;
@@ -51,6 +54,10 @@ int main() {
   cout << "Quaternion1 " << qua << endl
     << "Quaternion2 " << qua2 << endl;
   
+  Quaternion quaconj = ~qua;
+
+  cout << "Quaternion conjugate " << quaconj << endl;
+
   // up to this point.. built and dissassembled quaternion.
   Quaternion quaa = qua + qua2;
   Quaternion quas = qua - qua2;

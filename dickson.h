@@ -28,33 +28,6 @@ class Dickson {
   
     ~Dickson(){};
 
-    /*void setRe(T a){
-      this->Re = a;
-    };
-
-    void setIm(T b){
-      this->Im = b;
-    };*/
-    /*
-    T getRe(){
-      T re = this->Re;
-      return re;
-    };
-
-    T getIm(){
-      T im = this->Im;
-      return im;
-    };*/
-  /*  T conjugate(T e){
-      
-      if ( typeid(T) == typeid(int) ) {
-        throw "int doesn't like conjugate";
-        return e;
-      } else {
-          T res(e.Re, -e.Im);  
-          return res;
-      };
-    };*/
 
     Dickson operator*(Dickson &_B){
 
@@ -100,6 +73,23 @@ class Dickson {
       return res;
     };
 
+    Dickson operator-(){
+      T A = -this->Re;
+      T B = -this->Im;
+
+      Dickson res(A, B);
+
+      return res; 
+    }
+
+    Dickson operator~(){
+
+      T A = ~this->Re;
+      T B = -this->Im;
+      
+      Dickson res(A, B);
+      return res;
+    };
 };
 
 template <typename T>

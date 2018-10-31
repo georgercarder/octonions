@@ -14,7 +14,7 @@ class Baseint {
     Baseint(const Baseint& b) {
       this->Re = b.Re;
     }
-    
+
 
     int operator*(Baseint &b){
       int re = this->Re * b.Re;
@@ -31,6 +31,18 @@ class Baseint {
     int operator-(Baseint &b){
       int re = this->Re - b.Re;
       
+      return re;
+    }
+
+    int operator-(){
+      int re = -this->Re;
+
+      return re;
+    }
+
+    int operator~(){
+      int re = this->Re;
+
       return re;
     }
 };
