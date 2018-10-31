@@ -73,8 +73,10 @@ int main() {
   // quaternion mult compiles.. but now need to look at entries to see if correct 
 
   Octonion oct(qua, qua2);
+  Octonion octconj = ~oct;
   
-  //cout << "Octonion " << oct << endl;
+  cout << "Octonion " << oct << endl;
+  cout << "Octonion conjugate " << octconj << endl;
 
 
   return 0;
