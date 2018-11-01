@@ -37,13 +37,15 @@ class Dickson {
       // need to be sure conjugate is being accounted for
 
       T A1 = this->Re * c;
-      T B1 = this->Re * d;
+      T B1 = d * this->Re; 
 
       T cconj = ~c;
       T dconj = ~d; 
 
-      T A2 = this->Im * dconj;
+      T A2 = dconj * this->Im;
       T B2 = this->Im * cconj;
+
+      //cout << "(" << this->Re << ")(" << c << ")-(" << this->Im << ")(" << dconj << ") + (" << this->Re << ")(" << d << ")+(" << this->Im << ")(" << cconj << ")\n" ;
 
       T A = A1 - A2;
       T B = B1 + B2;
@@ -64,7 +66,7 @@ class Dickson {
     };
 
     Dickson operator-(Dickson &_B){
-
+      
       T A = this->Re - _B.Re;
       T B = this->Im - _B.Im;
 

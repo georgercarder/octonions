@@ -29,7 +29,7 @@ class Baseint {
     }
 
     int operator-(Baseint &b){
-      int re = this->Re - b.Re;
+      int re = this->Re -b.Re;
       
       return re;
     }

@@ -83,6 +83,10 @@ int main() {
   cout << "Octonion oct " << oct << endl;
   cout << "Octonion conjugate ~oct " << octconj << endl;
 
+  Octonion octp = oct * octconj;
+
+  cout << "oct * ~oct " << octp << endl;
+
   // define second octonion to check mult
   int _ent[8] = {2,3,7,3,9,4,5,7};
   
@@ -100,10 +104,14 @@ int main() {
   cout << "Octonion _oct " << _oct << endl;
   
   Octonion octm = oct * _oct;
-
+  
   // octonion product not yet validated .. need to find good
   // validating resource.. wolfram alpha was of no help
   cout << "Octonion product oct * _oct " << octm << endl;
+
+  Octonion octm2 = _oct * oct;
+
+  cout << "Octonion product _oct * oct " << octm2 << endl;
 
   return 0;
 }
