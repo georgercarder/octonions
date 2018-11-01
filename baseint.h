@@ -1,4 +1,6 @@
+#include <cmath>
 
+#define MDLS 5
 
 class Baseint {
   public:
@@ -8,7 +10,7 @@ class Baseint {
     Baseint(){};
 
     Baseint(int a){
-      this->Re = a;
+      this->Re = a % MDLS;
     }
 
     Baseint(const Baseint& b) {
@@ -17,19 +19,19 @@ class Baseint {
 
 
     int operator*(Baseint &b){
-      int re = this->Re * b.Re;
+      int re = (this->Re * b.Re) % MDLS;
 
       return re;
     }
     
     int operator+(Baseint &b){
-      int re = this->Re + b.Re;
+      int re = (this->Re + b.Re) % MDLS;
 
       return re;
     }
 
     int operator-(Baseint &b){
-      int re = this->Re -b.Re;
+      int re = (this->Re - b.Re) % MDLS;
       
       return re;
     }
@@ -46,8 +48,20 @@ class Baseint {
 
       return re;
     }
+
+    int first(){
+      int first = this->Re; 
+
+      return first;     
+    };
 };
 
+int normInv(int n){
+
+  int normInv = (int)pow(n, MDLS - 2) % MDLS;
+  
+  return normInv;
+};
 
 ostream& operator<<(ostream& os, Baseint d) {
   os << d.Re;

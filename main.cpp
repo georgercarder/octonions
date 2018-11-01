@@ -87,6 +87,18 @@ int main() {
 
   cout << "oct * ~oct " << octp << endl;
 
+  int octpFirst = octp.first();
+
+  cout << "first " << octpFirst << endl;
+
+  int octNorm = normSqrd(oct);
+
+  cout << "normSqrd(oct) " << octNorm << endl;
+
+  int nrmInv = normInv(octNorm);
+
+  cout << "normInv " << nrmInv << endl;
+
   // define second octonion to check mult
   int _ent[8] = {2,3,7,3,9,4,5,7};
   

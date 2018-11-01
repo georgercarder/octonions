@@ -92,7 +92,23 @@ class Dickson {
       Dickson res(A, B);
       return res;
     };
+
+    int first(){
+      int first = this->Re.first(); 
+
+      return first;     
+    };
 };
+
+template<typename T>
+int normSqrd(Dickson<T> d){
+  Dickson<T> conj = ~d;
+  Dickson<T> prod = d * conj;
+  int norm = prod.first();
+
+  return norm;
+};
+
 
 template <typename T>
     ostream& operator<<(ostream& os, Dickson<T> d) {
@@ -101,4 +117,4 @@ template <typename T>
         << d.Im;
 
       return os;
-    };
+};
