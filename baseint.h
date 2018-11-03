@@ -1,6 +1,4 @@
-#include <cmath>
 
-#define MDLS 5
 
 class Baseint {
   public:
@@ -17,6 +15,11 @@ class Baseint {
       this->Re = b.Re;
     }
 
+    int scale(int s){
+      int sRe = s * this->Re;
+      
+      return sRe;
+    };
 
     int operator*(Baseint &b){
       int re = (this->Re * b.Re) % MDLS;
@@ -56,12 +59,6 @@ class Baseint {
     };
 };
 
-int normInv(int n){
-
-  int normInv = (int)pow(n, MDLS - 2) % MDLS;
-  
-  return normInv;
-};
 
 ostream& operator<<(ostream& os, Baseint d) {
   os << d.Re;

@@ -28,13 +28,19 @@ class Dickson {
   
     ~Dickson(){};
 
+    Dickson scale(int s){
+      T sRe = this->Re.scale(s);
+      T sIm = this->Im.scale(s);
+
+      Dickson res(sRe, sIm);
+
+      return res;
+    };
 
     Dickson operator*(Dickson &_B){
 
       T c = _B.Re;
       T d = _B.Im;
-
-      // need to be sure conjugate is being accounted for
 
       T A1 = this->Re * c;
       T B1 = d * this->Re; 
@@ -44,8 +50,6 @@ class Dickson {
 
       T A2 = dconj * this->Im;
       T B2 = this->Im * cconj;
-
-      //cout << "(" << this->Re << ")(" << c << ")-(" << this->Im << ")(" << dconj << ") + (" << this->Re << ")(" << d << ")+(" << this->Im << ")(" << cconj << ")\n" ;
 
       T A = A1 - A2;
       T B = B1 + B2;
@@ -109,6 +113,42 @@ int normSqrd(Dickson<T> d){
   return norm;
 };
 
+int modPow(int n, int itr, int modls){ // needed for accuracy
+
+  if (itr > 0) {
+
+    return (n * modPow(n, itr - 1, modls)) % modls;
+  
+  } else {
+  
+    return 1;
+  
+  };
+};
+
+int normInv(int n){
+
+  int normInv = modPow(n, MDLS - 2, MDLS);
+  //int normInv = (int)pow(n, MDLS - 2) % MDLS;
+  
+  return normInv;
+};
+
+template<typename T> 
+Dickson<T> dicksonInv(Dickson<T> d){
+  Dickson<T> conj = ~d;
+
+  cout << "inverse conj " << conj << endl;
+  int norm = normSqrd(d);
+  int nrmInv = normInv(norm);
+
+  cout << "norm " << norm << endl;
+  cout << "inverse norm " << nrmInv << endl;
+
+  Dickson<T> inv = conj.scale(nrmInv);
+
+  return inv;
+};
 
 template <typename T>
     ostream& operator<<(ostream& os, Dickson<T> d) {

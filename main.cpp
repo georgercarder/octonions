@@ -1,7 +1,9 @@
 #include <iostream>
-#include <typeinfo>
+#include <cmath>
 
 using namespace std;
+
+#define MDLS 13 
 
 #include "dickson.h"
 #include "baseint.h"
@@ -29,6 +31,10 @@ int main() {
   Complex conj = ~com;
 
   cout << "complex conjugate " << conj << endl;
+  
+  Complex comInv = dicksonInv(com);
+
+  cout << "com inverse " << comInv << endl;
   ////
   // now test complex mult
 
@@ -95,9 +101,13 @@ int main() {
 
   cout << "normSqrd(oct) " << octNorm << endl;
 
-  int nrmInv = normInv(octNorm);
+  /*int nrmInv = normInv(octNorm);
 
   cout << "normInv " << nrmInv << endl;
+*/
+  Octonion soct = oct.scale(3);
+
+  cout << "scaled oct by 3 : " << soct << endl;
 
   // define second octonion to check mult
   int _ent[8] = {2,3,7,3,9,4,5,7};
