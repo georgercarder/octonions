@@ -13,6 +13,7 @@ class Dickson {
      * and a mod p is not a square.. 
      * when 1,u,v,w is basis of algebra 
      * with u^2=a and v^2=p and w:=uv=-vu
+     * .. the 'coef' changes the values a, p
      */
 
   public:
