@@ -35,6 +35,10 @@ int main() {
   Complex comInv = dicksonInv(com);
 
   cout << "com inverse " << comInv << endl;
+  
+  Complex cid = com * comInv;
+
+  cout << "com * comInv " << cid << endl;
   ////
   // now test complex mult
 
@@ -82,7 +86,10 @@ int main() {
 
   cout << "Qua1 * Qua2 " << quam << endl;
   // quaternion mult is validated
-  
+  Quaternion quaInv = dicksonInv(qua);
+
+  cout << "qua inverse " << quaInv << endl; 
+  // 
   Octonion oct(qua, qua2);
   Octonion octconj = ~oct;
   

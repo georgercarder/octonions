@@ -4,6 +4,7 @@ class Baseint {
   public:
     int Re;
     int Im = 0;
+    
 
     Baseint(){};
 

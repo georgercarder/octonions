@@ -7,16 +7,19 @@ class Dickson {
   public:
     T Re;
     T Im;
+    int coef = -1;
 
   public:
     Dickson(){
       //cout << "new di.." << endl;
     };
 
-    Dickson(T a, T b){
+    Dickson(T a, T b, int cf = -1){
 
       this->Re = a;
       this->Im = b;
+
+      this->coef = cf;
 
       //cout << "new dickson" << endl;
     };
@@ -51,7 +54,11 @@ class Dickson {
       T A2 = dconj * this->Im;
       T B2 = this->Im * cconj;
 
-      T A = A1 - A2;
+      //T A = A1 - A2;
+      
+      T _A2 = A2.scale(this->coef);
+
+      T A = A1 + _A2;
       T B = B1 + B2;
 
       Dickson res(A, B);
