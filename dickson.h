@@ -9,8 +9,9 @@ class Dickson {
     T Im;
     int coef = -1;
     /* note: when building quaternionic algebra, 
-     * (a,p)_Q gives division ring when p prime 
-     * and a mod p is not a square.. 
+     *  (a,b)_F is division ring iff 
+     *  ax^2+by^2=1 has no solution (x,y) in F*
+     *
      * when 1,u,v,w is basis of algebra 
      * with u^2=a and v^2=p and w:=uv=-vu
      * .. the 'coef' changes the values a, p
