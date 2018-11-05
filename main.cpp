@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#define MDLS 13 
+#define MDLS 101 
 
 #include "dickson.h"
 #include "baseint.h"
