@@ -11,6 +11,13 @@ class Dickson {
     /* note: when building quaternionic algebra, 
      *  (a,b)_F is division ring iff 
      *  ax^2+by^2=1 has no solution (x,y) in F
+     *  
+     *  but.. just found in a paper that when F finite field,
+     *  ax^2+by^2=1 mod o(F) always has soln.. 
+     *
+     *  need to devise new strategy to build division ring.
+     *  .. may just use quaternion alg -1,-1 with modulus being
+     *  bounds of int type
      *
      * when 1,u,v,w is basis of algebra 
      * with u^2=a and v^2=p and w:=uv=-vu
